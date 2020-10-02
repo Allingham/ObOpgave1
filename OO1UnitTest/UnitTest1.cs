@@ -25,14 +25,15 @@ namespace OO1UnitTest
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void NameTooShort()
         {
+            //arrange
             FanOutput fo = new FanOutput();
             string newName = "T";
 
             //act
             fo.Name = newName;
 
-            //Assert
-            // Asserting in tag
+            //assert
+            //asserting in tag
         }
 
         [TestMethod]
@@ -46,7 +47,7 @@ namespace OO1UnitTest
             fo.Name = null;
 
             //assert
-            // Asserting in tag
+            //asserting in tag
         }
 
         [TestMethod]
@@ -74,8 +75,8 @@ namespace OO1UnitTest
             //act
             fo.Temp = newTemp;
 
-            //Assert
-            // Asserting in tag
+            //assert
+            //asserting in tag
         }
 
         [TestMethod]
@@ -89,8 +90,8 @@ namespace OO1UnitTest
             //act
             fo.Temp = newTemp;
 
-            //Assert
-            // Asserting in tag
+            //assert
+            //asserting in tag
         }
 
         [TestMethod]
@@ -132,8 +133,8 @@ namespace OO1UnitTest
             //act
             fo.Humidity = newHumid;
 
-            //Assert
-            // Asserting in tag
+            //assert
+            //asserting in tag
         }
 
         [TestMethod]
@@ -147,8 +148,8 @@ namespace OO1UnitTest
             //act
             fo.Humidity = newHumid;
 
-            //Assert
-            // Asserting in tag
+            //assert
+            //asserting in tag
         }
 
         [TestMethod]
@@ -166,5 +167,18 @@ namespace OO1UnitTest
             Assert.IsNotNull(fo);
         }
 
+        [TestMethod]
+        public void TestToString()
+        {
+            //arrange
+            FanOutput fo = new FanOutput(1,"Test",20,55);
+
+            //act
+            string foToString = fo.ToString();
+            string expectedResult = "ID: 1, Name: Test, Temp: 20, Humidity: 55";
+
+            //assert
+            Assert.AreEqual(foToString, expectedResult);
+        }
     }
 }
